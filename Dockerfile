@@ -31,6 +31,7 @@ COPY --chown=myuser:myuser "agents/weather_agent/" "/app/agents/weather_agent/"
 RUN pip install -r "/app/agents/weather_agent/requirements.txt"
 # Install Agent Deps - End
 
-EXPOSE 8000
+ENV PORT=8080
+EXPOSE 8080
 
-CMD adk web --port=8000 --host=0.0.0.0       "/app/agents"
+CMD exec adk web --port=${PORT} --host=0.0.0.0 "/app/agents"
