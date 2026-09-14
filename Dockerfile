@@ -23,7 +23,7 @@ RUN pip install google-adk==1.14.0
 # Copy agent - Start
 
 # Set permission
-COPY --chown=myuser:myuser "agents/weather_agent/" "/app/agents/weather_agent/"
+COPY --chown=myuser:myuser "/weather_agent/agent" "/app/agents/weather_agent/"
 
 # Copy agent - End
 
